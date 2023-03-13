@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
+
+.text-center {
+  background-color: grey;
+}
+
 .title {
   font-size: 24px;
   line-height: 28px;
   font-weight: bold;
-  color: #374151;
+  color: #010202;
   padding-bottom: 11px;
   border-bottom: 1px solid #d7dbdf;
 }
@@ -17,15 +22,16 @@
 
 .textarea-group label,
 .form-group label {
-  color: #374151;
+  color: #000000;
   font-size: 16px;
   line-height: 19px;
   margin-bottom: 10px;
+  font-weight: bold
 }
 
 .form-group [type],
 .textarea-group textarea {
-  border: 1px solid #d2d6db;
+  border: 2px solid black;
   border-radius: 6px;
   padding: 15px;
 }
@@ -109,6 +115,11 @@
   background: #4239e8;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 768px) {
   body {
     align-items: center;
@@ -168,5 +179,10 @@
 		c'est pas tout mais j'ai faim moi ^^
 		*/
     width: auto;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
   }
 }
