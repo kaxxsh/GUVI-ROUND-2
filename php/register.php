@@ -36,11 +36,9 @@ if(isset($_POST['action'])&&$_POST['action']=='register'){
     $sql->execute();
     $result = $sql->get_result();
     $row  = $result->fetch_array(MYSQLI_ASSOC);
-    // echo $uname;
-    // echo $row['username'];
     if(isset($row['uname'])== $uname)
     {
-        echo 'username not available try different';
+        echo 'uname not available try different';
 
     }else if(isset($row['email']) == $email)
     {
@@ -73,6 +71,7 @@ if(isset($_POST['action'])&&$_POST['action']=='register'){
 }else{
   session_destroy(); 
   // echo session_status();
+  
   // header('location:login.html');
 }
 
