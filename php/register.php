@@ -13,7 +13,7 @@ require 'vendor/autoload.php';
 // Creating Connection  
 $serverApi = new \MongoDB\Driver\ServerApi(\MongoDB\Driver\ServerApi::V1);
 $client = new \MongoDB\Client(
-    'mongodb+srv://bharath18117886:1811786%40Csc@cluster0.zlt4eza.mongodb.net/test', [], ['serverApi' => $serverApi]);
+    'mongodb+srv://kaxxsh:kaxxsh@cluster0.mgxa7bg.mongodb.net/test', [], ['serverApi' => $serverApi]);
 $db = $client->login;
 $collection = $db->students;  
 
@@ -31,14 +31,14 @@ if(isset($_POST['action'])&&$_POST['action']=='register'){
     exit();
   }else{
     // sql  prepared statement 
-    $sql = $conn->prepare("SELECT username,email from users WHERE username =? OR email=?");
+    $sql = $conn->prepare("SELECT uname,email from users WHERE uname =? OR email=?");
     $sql->bind_param("ss",$uname,$email);
     $sql->execute();
     $result = $sql->get_result();
     $row  = $result->fetch_array(MYSQLI_ASSOC);
     // echo $uname;
     // echo $row['username'];
-    if(isset($row['username'])== $uname)
+    if(isset($row['uname'])== $uname)
     {
         echo 'username not available try different';
 
@@ -48,7 +48,7 @@ if(isset($_POST['action'])&&$_POST['action']=='register'){
     }
     else
     {
-        $stmt = $conn->prepare("INSERT INTO users (name,username,email,pass,created) VALUES (?,?,?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO users (name,uname,email,pass,created) VALUES (?,?,?,?,?)");
         $stmt->bind_param('sssss',$name,$uname,$email,$pass,$created);
 
         // echo $stmt->is_executable();
